@@ -2,11 +2,11 @@
 
 #! /usr/bin/bash
 
-# # first line of .sh file must be result of which bash
-# # Space will interupt code exection 
-# # But Space must be given where it is needed like - [ ]
-# # Bash is case sensitive like other UNIX
-# # fi is used to end conditional statement
+## first line of .sh file must be result of which bash
+## Space will interupt code exection 
+## But Space must be given where it is needed like - [ ]
+## Bash is case sensitive like other UNIX
+## fi is used to end conditional statement
 
 <br>
 <br>
@@ -15,7 +15,8 @@
 <br>
 
 #############
-# # ECHO Command
+# ECHO Command
+
 `echo "Hello World!"`
 
 <br>
@@ -25,16 +26,18 @@
 <br>
 
 #############
-# # VARIABLE
-# # UpperCase by Convention
-# # Letters, Numbers, Under_Score is allowed
-# # Put a $ before variable to print it in string
+# VARIABLE
+
+## UpperCase by Convention
+## Letters, Numbers, Under_Score is allowed
+## Put a $ before variable to print it in string
 
 `NAME="Jubyer"`
 
 `echo Hello I am $NAME`
 
-# # ${var_Name} this is also allowed
+## ${var_Name} this is also allowed
+
 `echo "Hello I am ${NAME}" `
 
 <br>
@@ -44,9 +47,12 @@
 <br>
 
 #############
-# # USER INPUT 
-# # command command_execution_style Message_to_show variable_to_store_input
+# USER INPUT 
+
+## command command_execution_style Message_to_show variable_to_store_input
+
 `read -p "Enter your name: " NAME`
+
 `echo "Hello ${NAME}, nice to meet you"`
 
 <br>
@@ -56,7 +62,10 @@
 <br>
 
 #############
-# # IF statement
+
+# Conditional Statement
+
+## IF statement
 `if [ "$NAME"=="Shezan" ]`
 
 `then`
@@ -65,7 +74,7 @@
 
 `fi`
 
-# # IF-ELSE statement
+## IF-ELSE statement
 
 `if [ "$NAME" == "Shezan" ]`
 
@@ -79,7 +88,7 @@
 
 `fi`
 
-# # ELSE-IF (elif) statement
+## ELSE-IF (elif) statement
 
 `if [ "$NAME" == "Shezan" ]`
 
@@ -106,14 +115,17 @@
 <br>
 
 #############
-# # COMPARISIONAL
-# # val1 -eq val2 --> Return true if values are equal
-# # val1 -nq val2 --> Return true if values are not equal
-# # val1 -gt val2 --> Return true if val1 is greater than val2
-# # val1 -ge val2 --> Return true if val1 is greater than or equal val2
-# # val1 -lt val2 --> Return true if val1 is less than val2
-# # val1 -le val2 --> Return true if val1 is less than or equal val2
+# COMPARISIONAL
+
+
+## val1 -eq val2 --> Return true if values are equal
+## val1 -nq val2 --> Return true if values are not equal
+## val1 -gt val2 --> Return true if val1 is greater than val2
+## val1 -ge val2 --> Return true if val1 is greater than or equal val2
+## val1 -lt val2 --> Return true if val1 is less than val2
+## val1 -le val2 --> Return true if val1 is less than or equal val2
 #############
+
 
 `VAL1=9`
 
@@ -145,15 +157,20 @@
 <br>
 
 #############
-# -d file  --> True if the file is a directory or folder
-# -e file  --> True if the file exists (note that this is not particularly portable, thus -f is generally used )
-# -f file  --> True if the provided string is a file
-# -g file  --> True if the group is set on a file
-# -r file  --> True if the file is readable
-# -s file  --> True if the file has a non-zero size
-# -u  --> True if the user id is set on a file
-# -w  --> True if the file is writable
-# -x  --> True if the file is executable
+
+# WORKING WITH FILE 
+
+## -d file  --> True if the file is a directory or folder
+## -e file  --> True if the file exists (note that this is not particularly portable, thus -f is generally used )
+## -f file  --> True if the provided string is a file
+## -g file  --> True if the group is set on a file
+## -r file  --> True if the file is readable
+## -s file  --> True if the file has a non-zero size
+## -u  --> True if the user id is set on a file
+## -w  --> True if the file is writable
+## -x  --> True if the file is executable
+
+<br>
 #############
 
 <br>
@@ -181,7 +198,7 @@
 <br>
 
 #############
-# # SWITCH statement
+# SWITCH statement
 
 `read -p "Are you over 18 Y/N: " ANS`
 
@@ -207,6 +224,10 @@
 
 `esac # indicates end of switch spelled as "case" in backward`
 
+<br>
+<br>
+<br>
+
 #############
 
 <br>
@@ -217,7 +238,10 @@
 
 
 #############
-# # SIMPLE FOR LOOP
+
+# FOR LOOP
+
+## SIMPLE FOR LOOP
 
 `NAMES="Saikat Tanzid Rasel Shezan"`
 
@@ -229,7 +253,11 @@
 
 `done # ending loop`
 
-# # printing number
+<br>
+<br>
+<br>
+
+## printing number
 
 `N="1 2 3 4"`
 
@@ -241,7 +269,11 @@
 
 `done `
 
-# # Renaming file with FOR LOOP
+<br>
+<br>
+<br>
+
+## Renaming file with FOR LOOP
 `FILES=$(ls *.txt) # saving file name in a variable`
 
 `NEW="new" # setting new prefix for fileName`
@@ -263,7 +295,8 @@
 <br>
 
 #############
-# # WHILE LOOP
+# WHILE LOOP
+
 `LINE=1 # indicating line Number `
 
 
@@ -284,7 +317,7 @@
 <br>
 
 #############
-# # FUNCTION - its more like jaavscript/PHP function
+# FUNCTION - its more like jaavscript/PHP function
 
 `function sayHello(){`
 
@@ -294,11 +327,14 @@
 
 `sayHello`
 
+<br>
+<br>
+<br>
 
 #############
-# # FUNCTION with PARAMETERS
-# # we dont have pass variable in ()
-# # just mentioning $1, $2 will work as first parameter, 2nd param
+## FUNCTION with PARAMETERS
+## we dont have pass variable in ()
+## just mentioning $1, $2 will work as first parameter, 2nd param
 
 `function greet(){`
 
@@ -315,7 +351,7 @@
 <br>
 
 #############
-# # CREATE A FOLDER AND WRITE A FILE IN IT
+## CREATE A FOLDER AND WRITE A FILE IN IT
 
 `mkdir hello `
 
