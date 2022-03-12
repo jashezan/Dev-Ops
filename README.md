@@ -8,10 +8,21 @@
 # # Bash is case sensitive like other UNIX
 # # fi is used to end conditional statement
 
+<br>
+<br>
+<br>
+<br>
+<br>
+
 #############
 # # ECHO Command
 echo "Hello World!"
 
+<br>
+<br>
+<br>
+<br>
+<br>
 
 #############
 # # VARIABLE
@@ -25,6 +36,11 @@ echo Hello I am $NAME
 # # ${var_Name} this is also allowed
 echo "Hello I am ${NAME}" 
 
+<br>
+<br>
+<br>
+<br>
+<br>
 
 #############
 # # USER INPUT 
@@ -32,6 +48,11 @@ echo "Hello I am ${NAME}"
 read -p "Enter your name: " NAME
 echo "Hello ${NAME}, nice to meet you"
 
+<br>
+<br>
+<br>
+<br>
+<br>
 
 #############
 # # IF statement
@@ -59,6 +80,12 @@ else
   echo "Your Name is not Shezan, you're $NAME"
 fi
 
+<br>
+<br>
+<br>
+<br>
+<br>
+
 #############
 # # COMPARISIONAL
 # # val1 -eq val2 --> Return true if values are equal
@@ -81,6 +108,11 @@ else
   echo "$VAL1 is equal $VAL2"
 fi 
 
+<br>
+<br>
+<br>
+<br>
+<br>
 
 #############
 # -d file  --> True if the file is a directory or folder
@@ -94,6 +126,10 @@ fi
 # -x  --> True if the file is executable
 #############
 
+<br>
+<br>
+<br>
+
 FILE="test.txt"
 if [ -d "$FILE" ]
 then
@@ -102,6 +138,11 @@ else
   echo "$FILE is not a file"
 fi
 
+<br>
+<br>
+<br>
+<br>
+<br>
 
 #############
 # # SWITCH statement
@@ -118,6 +159,12 @@ case "$ANS" in
     ;;
 esac # indicates end of switch spelled as "case" in backward
 #############
+
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 #############
@@ -144,7 +191,11 @@ for F in $FILES
     mv $F $NEW-$F # moving file so that old file moved with newName
 done 
 
-
+<br>
+<br>
+<br>
+<br>
+<br>
 
 #############
 # # WHILE LOOP
@@ -155,7 +206,11 @@ while read -r CURRENT_LINE # Reading from file till end
     ((LINE++)) # increamenting line number
 done < "./new-$.txt" # mentioning file path
 
-
+<br>
+<br>
+<br>
+<br>
+<br>
 
 #############
 # # FUNCTION - its more like jaavscript/PHP function
@@ -175,7 +230,11 @@ function greet(){
 
 greet "Jubyer" "Shezan"
 
-
+<br>
+<br>
+<br>
+<br>
+<br>
 
 #############
 # # CREATE A FOLDER AND WRITE A FILE IN IT
@@ -184,11 +243,15 @@ touch "hello/world.txt"
 echo "Hello World" >> "hello/world.txt"
 echo "Created \"hello/world.txt\" "
 
-
+<br>
+<br>
+<br>
+<br>
+<br>
 
 #############
 # ITERATING VALUES FROM FILE 
-PATH="/hello/world"
+PATH="/hello/world" 
 for VALUE in $( cat $PATH )
   do 
     echo "Characters of Hera Pheri: $VALUE"
