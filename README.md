@@ -5,8 +5,7 @@
 ```
 
 <br>
-<br>
-<br>
+
 
 * #### first line of .sh file must be result of which bash
 * #### Space will interupt code exection 
@@ -14,8 +13,7 @@
 * #### Bash is case sensitive like other UNIX
 * #### fi is used to end conditional statement
 
-<br>
-<br>
+
 <br>
 
 
