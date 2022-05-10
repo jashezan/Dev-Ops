@@ -33,9 +33,8 @@ echo "Hello World!"
 ```
 
 <br>
-<br>
-<br>
 
+This command will print the input with this command in terminal.
 
 
 <br>
@@ -46,9 +45,11 @@ echo "Hello World!"
 
 # VARIABLE
 
-## UpperCase by Convention
-## Letters, Numbers, Under_Score is allowed
-## Put a $ before variable to print it in string
+### UpperCase by Convention
+### Letters, Numbers, Under_Score is allowed
+### Put a $ before variable to print it in string
+
+<br>
 
 ```bash
 NAME="Jubyer"
@@ -74,7 +75,10 @@ echo "Hello I am ${NAME}"
 
 # USER INPUT 
 
-## command command_execution_style Message_to_show variable_to_store_input
+
+```bash 
+command    command_execution_style    Message_to_show    variable_to_store_input
+```
 
 ```bash
 read -p "Enter your name: " NAME
