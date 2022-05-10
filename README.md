@@ -20,7 +20,11 @@
 
 
 
+<br>
+
 --------------------------------- 
+
+<br>
 
 # ECHO Command
 
@@ -34,7 +38,11 @@ echo "Hello World!"
 
 
 
+<br>
+
 --------------------------------- 
+
+<br>
 
 # VARIABLE
 
@@ -58,7 +66,11 @@ echo "Hello I am ${NAME}"
 
 
 
+<br>
+
 --------------------------------- 
+
+<br>
 
 # USER INPUT 
 
@@ -76,7 +88,11 @@ echo "Hello ${NAME}, nice to meet you"
 
 
 
+<br>
+
 --------------------------------- 
+
+<br>
 
 
 # Conditional Statement
@@ -136,7 +152,11 @@ fi
 
 
 
+<br>
+
 --------------------------------- 
+
+<br>
 
 # COMPARISIONAL
 
@@ -153,7 +173,11 @@ fi
 
 
 
+<br>
+
 --------------------------------- 
+
+<br>
 
 <br>
 
@@ -188,7 +212,11 @@ fi
 
 
 
+<br>
+
 --------------------------------- 
+
+<br>
 
 
 # WORKING WITH FILE 
@@ -210,7 +238,11 @@ fi
 
 <br>
 
+<br>
+
 --------------------------------- 
+
+<br>
 
 
 <br>
@@ -240,7 +272,11 @@ fi
 
 
 
+<br>
+
 --------------------------------- 
+
+<br>
 
 # SWITCH statement
 
@@ -275,8 +311,12 @@ esac # indicates end of switch spelled as "case" in backward
 <br>
 
 
+<br>
+
 --------------------------------- 
 
+<br>
+
 
 <br>
 <br>
@@ -284,8 +324,12 @@ esac # indicates end of switch spelled as "case" in backward
 
 
 
+
+<br>
 
 --------------------------------- 
+
+<br>
 
 
 # FOR LOOP
@@ -350,7 +394,11 @@ done
 
 
 
+<br>
+
 --------------------------------- 
+
+<br>
 
 # WHILE LOOP
 
@@ -375,7 +423,11 @@ done < "./new-$.txt" # mentioning file path
 
 
 
+<br>
+
 --------------------------------- 
+
+<br>
 
 # FUNCTION - its more like jaavscript/PHP function
 
@@ -394,7 +446,11 @@ sayHello
 <br>
 
 
+<br>
+
 --------------------------------- 
+
+<br>
 
 # FUNCTION with PARAMETERS
 ## we dont have pass variable in ()
@@ -416,7 +472,11 @@ greet "Jubyer" "Shezan"
 
 
 
+<br>
+
 --------------------------------- 
+
+<br>
 
 # CREATE A FOLDER AND WRITE A FILE IN IT
 
@@ -436,7 +496,11 @@ echo "Created \"hello/world.txt\" "
 
 
 
+<br>
+
 --------------------------------- 
+
+<br>
 
 # ITERATING VALUES FROM FILE 
 
