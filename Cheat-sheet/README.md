@@ -209,7 +209,7 @@ Boolean operators include and `&&`, or `||` and not equal to `!`. These operator
  Syntax | Description
 ---------- | ---------------------------
 `&&`  | Logical AND operator
-`||`  | Logical OR operator
+`\|\|`  | Logical OR operator
 `! `  | NOT equal to operator
 
 Closing Thoughts
