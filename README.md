@@ -1,519 +1,255 @@
-# Shell-scripting-traversy
+# The Only Bash Scripting Cheat Sheet That You Will Ever Need
+
+
+Introduction
+------------
+
+No matter if you are a DevOps/SysOps engineer, developer, or just a Linux enthusiast, you can use Bash scripts to combine different Linux commands and automate boring and repetitive daily tasks, so that you can focus on more productive and fun things.
+
+Here you can find the completed Bash Scripting cheat sheet 👇
+
+Bash Script Header (Shebang)
+----------------------------
+
+Option 1:
 
 ```bash
-! /usr/bin/bash
+    #!/bin/bash
 ```
 
-<br>
-
-
-* #### first line of .sh file must be result of which bash
-* #### Space will interupt code exection 
-* #### But Space must be given where it is needed like - [ ]
-* #### Bash is case sensitive like other UNIX
-* #### fi is used to end conditional statement
-
-
-<br>
-
-
-
-<br>
-
---------------------------------- 
-
-<br>
-
-# ECHO Command
+Option 2:
 
 ```bash
-echo "Hello World!"
+    #!/usr/bin/env bash
 ```
 
-<br>
-
-This command will print the input with this command in terminal.
-
-
-<br>
-
---------------------------------- 
-
-<br>
-
-# VARIABLE
-
-### UpperCase by Convention
-### Letters, Numbers, Under_Score is allowed
-### Put a $ before variable to print it in string
-
-<br>
+Variables
+---------
 
 ```bash
-NAME="Jubyer"
-
-echo Hello I am $NAME
-
-## ${var_Name} this is also allowed
-
-echo "Hello I am ${NAME}" 
+    #!/bin/bash
+    name="DevDojo"
+    echo "Hi there $name"
 ```
 
-<br>
-<br>
-<br>
-
-
-
-<br>
-
---------------------------------- 
-
-<br>
-
-# USER INPUT 
-
-
-```bash 
-command    command_execution_style    Message_to_show    variable_to_store_input
-```
-
+User Input
+----------
 ```bash
-read -p "Enter your name: " NAME
-
-echo "Hello ${NAME}, nice to meet you"
+    #!/bin/bash
+    
+    echo "What is your name?"
+    read name
+    
+    echo "Hi there $name"
+    echo "Welcome to DevDojo!"
 ```
 
-<br>
-<br>
-<br>
+Comments
+--------
 
-
-
-<br>
-
---------------------------------- 
-
-<br>
-
-
-# Conditional Statement
-
-## IF statement
-
+To do that in bash you need to add the # symbol at the beginning of the line. Comments will never be rendered on the screen.
 ```bash
-if [ "$NAME"=="Shezan" ]
-
-then
-
-  echo "Hello I am $NAME"
-
-fi
-
-## IF-ELSE statement
-
-if [ "$NAME" == "Shezan" ]
-
-then
-
-  echo "Hello I am $NAME"
-
-else
-
-  echo "Your Name is not Shezan, you're $NAME"
-
-fi
+    # This is a comment and will not be rendered on the screen
 ```
 
-## ELSE-IF (elif) statement
-
-
+Arguments
+---------
 ```bash
-if [ "$NAME" == "Shezan" ]
-
-then
-
-  echo "Hello I am $NAME"
-
-elif [ "$NAME" == "Jack" ]
-
-then
-
-  echo "Oh!! so you're $NAME"
-
-else
-
-  echo "Your Name is not Shezan, you're $NAME"
-
-fi
+    #!/bin/bash
+    
+    echo "Argument one is $1"
+    echo "Argument two is $2"
+    echo "Argument three is $3"
 ```
 
-<br>
-<br>
-<br>
-
-
-
-<br>
-
---------------------------------- 
-
-<br>
-
-# COMPARISIONAL
-
-<br>
-
-| Command | --> | What does it do |
-| ------------- | --- | ------------------------------ |
-| val1 -eq val2 | --> | Return true if values are equal |
-| val1 -nq val2 | --> | Return true if values are not equal |
-| val1 -gt val2 | --> | Return true if val1 is greater than val2 |
-| val1 -ge val2 | --> | Return true if val1 is greater than or equal val2 |
-| val1 -lt val2 | --> | Return true if val1 is less than val2 |
-| val1 -le val2 | --> | Return true if val1 is less than or equal val2 |
-
-
-
-<br>
-
---------------------------------- 
-
-<br>
-
-<br>
-
+Then run the file and pass 3 arguments:
 ```bash
-VAL1=9
-
-VAL2=9
-
-if [ "$VAL1" -gt "$VAL2" ]
-
-then
-
-  echo "$VAL1 is greater than $VAL2"
-
-elif [ "$VAL1" -lt "$VAL2" ]
-
-then 
-
-  echo "$VAL1 is less than $VAL2"
-
-
-else 
-
-  echo "$VAL1 is equal $VAL2"
-
-fi 
+    bash ./arguments.sh dog cat bird    
 ```
 
-<br>
-<br>
-<br>
-
-
-
-<br>
-
---------------------------------- 
-
-<br>
-
-
-# WORKING WITH FILE 
-
-<br>
-
-| command  | --> | working |
-| -------- |:---:| -----:|
-| -d file  | --> | True if the file is a directory or folder |
-| -e file  | --> | True if the file exists (note that this is not particularly portable, thus -f is generally used ) |
-| -f file  | --> | True if the provided string is a file |
-| -g file  | --> | True if the group is set on a file |
-| -r file  | --> | True if the file is readable | 
-| -s file  | --> | True if the file has a non-zero size |
-| -u       | --> | True if the user id is set on a file |
-| -w       | --> | True if the file is writable |
-| -x       | --> | True if the file is executable |
-
-
-<br>
-
-<br>
-
---------------------------------- 
-
-<br>
-
-
-<br>
-<br>
-<br>
-
-
+Arrays
+------
 ```bash
-FILE="test.txt"
-
-if [ -d "$FILE" ]
-
-then
-
-  echo "$FILE is a file"
-
-else
-
-  echo "$FILE is not a file"
-
-fi
+    my_array=("value 1" "value 2" "value 3" "value 4")
+    
+    # Access a single element, this would output: value 2
+    echo ${my_array[1]}
+    
+    # This would return the last element: value 4
+    echo ${my_array[-1]}
+    
+    # This would output the total number of elements in the array, in our case, it is 4:
+    echo "${#my_array[@]}"
+    
+    # This would output all of the elements of the array:
+    printf '%s\n' "${my_array[@]}"
 ```
 
-<br>
-<br>
-<br>
+Conditional Expressions
+-----------------------
 
-
-
-<br>
-
---------------------------------- 
-
-<br>
-
-# SWITCH statement
-
+### File expressions
 ```bash
-read -p "Are you over 18 Y/N: " ANS
-
-case "$ANS" in 
-
-  [yY] | [yY][eE][sS])
-
-    echo "okay You can Vote"
-
-    ;; # this work as break
-
-  [nN] | [nN][oO])
-
-    echo "No you can't Vote"
-
-    ;;
-
-  *) # this work as default
-
-    echo "Please enter y/yes or n/no"
-
-    ;;
-
-esac # indicates end of switch spelled as "case" in backward
+    ## True if file exists.
+    [[ -a ${file} ]]
+    
+    ## True if file exists and is a block special file.
+    [[ -b ${file} ]]
+    
+    ## True if file exists and is a character special file.
+    [[ -c ${file} ]]
+    
+    ## True if file exists and is a directory.
+    [[ -d ${file} ]]
+    
+    ## True if file exists.
+    [[ -e ${file} ]]
+    
+    ## True if file exists and is a regular file.
+    [[ -f ${file} ]]
+    
+    ## True if file exists and is a symbolic link.
+    [[ -h ${file} ]]
+    
+    ## True if file exists and is readable.
+    [[ -r ${file} ]]
+    
+    ## True if file exists and has a size greater than zero.
+    [[ -s ${file} ]]
+    
+    ## True if file exists and is writable.
+    [[ -w ${file} ]]
+    
+    ## True if file exists and is executable.
+    [[ -x ${file} ]]
+    
+    ## True if file exists and is a symbolic link.
+    [[ -L ${file} ]]
 ```
 
-<br>
-<br>
-<br>
-
-
-<br>
-
---------------------------------- 
-
-<br>
-
-
-<br>
-<br>
-<br>
-
-
-
-
-<br>
-
---------------------------------- 
-
-<br>
-
-
-# FOR LOOP
-
-## SIMPLE FOR LOOP
-
+### String expressions
 ```bash
-NAMES="Saikat Tanzid Rasel Shezan"
-
-for NAME in $NAMES # like javascript
-
-  do # defining what to do
-
-    echo "Hello $NAME" # statement
-
-done # ending loop
+    # True if the shell variable varname is set (has been assigned a value).
+    [[ -v ${varname} ]]
+    
+    # True if the length of the string is zero.
+    [[ -z ${string} ]]
+    
+    # True if the length of the string is non-zero.
+    [[ -n ${string} ]]
+    
+    # True if the strings are equal. = should be used with the test command for POSIX conformance. When used with the [[ command, this performs pattern matching as described above (Compound Commands)
+    [[ ${string1} == ${string2} ]]
+    
+    # True if the strings are not equal.
+    [[ ${string1} != ${string2} ]]
+    
+    # True if string1 sorts before string2 lexicographically.
+    [[ ${string1} < ${string2} ]]
+    
+    # True if string1 sorts after string2 lexicographically.
+    [[ ${string1} > ${string2} ]]
 ```
 
-<br>
-<br>
-<br>
-
-## printing number
-
+### Arithmetic operators
 ```bash
-N="1 2 3 4"
-
-for I in $N 
-
-  do 
-
-  echo $I
-
-done 
+    # Returns true if the numbers are equal
+    [[ ${arg1} -eq ${arg2} ]]
+    
+    # Returns true if the numbers are not equal
+    [[ ${arg1} -ne ${arg2} ]]
+    
+    # Returns true if arg1 is less than arg2
+    [[ ${arg1} -lt ${arg2} ]]
+    
+    # Returns true if arg1 is less than or equal arg2
+    [[ ${arg1} -le ${arg2} ]]
+    
+    # Returns true if arg1 is greater than arg2
+    [[ ${arg1} -gt ${arg2} ]]
+    
+    # Returns true if arg1 is greater than or equal arg2
+    [[ ${arg1} -ge ${arg2} ]]
+    
+    # As with other programming languages you can use AND & OR conditions:
+    [[ test_case_1 ]] && [[ test_case_2 ]] # And
+    [[ test_case_1 ]] || [[ test_case_2 ]] # Or
 ```
 
-<br>
-<br>
-<br>
-
-## Renaming file with FOR LOOP
-
+Conditionals
+------------
 ```bash
-FILES=$(ls *.txt) # saving file name in a variable
-
-NEW="new" # setting new prefix for fileName
-
-for F in $FILES
-
-  do 
-
-    echo "Renaming file from $F to new-$F"
-
-    mv $F $NEW-$F # moving file so that old file moved with newName
-
-done 
+    #!/bin/bash
+    
+    # Bash if statement example
+    
+    read -p "What is your name? " name
+    
+    if [[ -z ${name} ]]
+    then
+        echo "Please enter your name!"
+    else
+        echo "Hi there ${name}"
+    fi
 ```
 
-<br>
-<br>
-<br>
+Loops
+-----
 
-
-
-<br>
-
---------------------------------- 
-
-<br>
-
-# WHILE LOOP
-
+### For loops
 ```bash
-LINE=1 # indicating line Number 
-
-
-while read -r CURRENT_LINE # Reading from file till end
-
-  do 
-
-    echo "$LINE: $CURRENT_LINE" # printing line by line
-
-    ((LINE++)) # increamenting line number
-
-done < "./new-$.txt" # mentioning file path
+    #!/bin/bash
+    
+    users="devdojo, bobby, tony"
+    
+    for user in ${users}
+    do
+        echo "${user}"
+    done
 ```
 
-<br>
-<br>
-<br>
-
-
-
-<br>
-
---------------------------------- 
-
-<br>
-
-# FUNCTION - its more like jaavscript/PHP function
-
+### While loops
 ```bash
-function sayHello(){
-
-  echo "Hello World!!"
-
-}
-
-sayHello
+    #!/bin/bash
+    
+    counter=1
+    while [[ $counter -le 10 ]]
+    do
+        echo $counter
+        ((counter++))
+    done
 ```
 
-<br>
-<br>
-<br>
-
-
-<br>
-
---------------------------------- 
-
-<br>
-
-# FUNCTION with PARAMETERS
-## we dont have pass variable in ()
-## just mentioning &nbsp; $1,&nbsp; $2 &nbsp; will work as first parameter, 2nd param
-
+### Until Loops
 ```bash
-function greet(){
-
-    echo "Hello $1, also Hello $2"
-
-}
-
-greet "Jubyer" "Shezan"
+    #!/bin/bash
+    
+    count=1
+    until [ $count -gt 10 ]
+    do
+        echo $count
+        ((count++))
+    done
 ```
 
-<br>
-<br>
-<br>
-
-
-
-<br>
-
---------------------------------- 
-
-<br>
-
-# CREATE A FOLDER AND WRITE A FILE IN IT
-
+Functions
+---------
 ```bash
-mkdir hello 
-
-touch "hello/world.txt"
-
-echo "Hello World" >> "hello/world.txt"
-
-echo "Created \"hello/world.txt\" "
+    function function_name() {
+        your_commands
+    }
 ```
 
-<br>
-<br>
-<br>
-
-
-
-<br>
-
---------------------------------- 
-
-<br>
-
-# ITERATING VALUES FROM FILE 
-
+Example
 ```bash
-PATH="/hello/world" 
-
-for VALUE in $( cat $PATH )
-
-  do 
-
-    echo "Characters of Hera Pheri: $VALUE"
-
-done 
+    #!/bin/bash
+    
+    function hello(){
+        echo "Hello World Function!"
+    }
+    
+    hello
 ```
+
+
+Source: https://linuxconfig.org/bash-scripting-cheat-sheet
