@@ -1,5 +1,8 @@
 # The Only Bash Scripting Cheat Sheet That You Will Ever Need
 
+Another Great One: https://github.com/jashezan/Shell-Scripting/blob/main/Cheat-sheet/README.md
+
+<br>
 
 Introduction
 ------------
