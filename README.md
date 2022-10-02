@@ -154,6 +154,21 @@ Conditional Expressions
     [[ ${string1} > ${string2} ]]
 ```
 
+### Operations on String
+```bash
+    # Trim the shortest match from the end
+    ${variable%pattern}
+
+    # Trim the longest match from the beginning
+    ${variable##pattern}
+
+    # Trim the longest match from the end
+    ${variable%%pattern}
+
+    # Trim the shortest match from the beginning
+    ${variable#pattern}
+```
+
 ### Arithmetic operators
 ```bash
     # Returns true if the numbers are equal
