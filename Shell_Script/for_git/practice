@@ -1,0 +1,23 @@
+#!/bin/bash
+
+git_repo_link="https://gitlab.com/sosuke-aizen/nextjs-firebase-course.git"
+git_repo_link=$1
+# filename="${git_repo_link%.*}"
+# extension="${git_repo_link##*.}"
+extension=${git_repo_link: -3}
+# first=${git_repo_link:0:32}
+
+# if [ "$extension" != "git" ]; then
+#   echo "Not a Git Repo"
+#   exit 1
+# fi
+
+# if [ "$first" != "https://gitlab.com/sosuke-aizen/" ]; then
+#   echo "Not Sosuke Aizen's Gitlab Repo Link"
+#   exit 1
+# fi
+
+# echo $first
+# echo $filename
+echo $extension
+

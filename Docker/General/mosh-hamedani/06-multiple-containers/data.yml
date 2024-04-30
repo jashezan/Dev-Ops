@@ -1,0 +1,12 @@
+---
+
+name:The ultimate Docker Course
+price: 149
+is_published: true
+tags: 
+  - software
+  - devops
+author:
+    first_name:Soumadip
+    last_name:Dey
+

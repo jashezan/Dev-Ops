@@ -1,0 +1,50 @@
+#!/bin/bash
+
+rm -rf .git
+
+if [ $# -eq 0 ]; then
+  echo "No arguments provided!"
+  exit 1
+fi
+
+GIT_ORIGIN_LINK=$1
+REPO_LINK="${GIT_ORIGIN_LINK%.*}"
+EXTENSION="${GIT_ORIGIN_LINK##*.}"
+FIRST_PART=${GIT_ORIGIN_LINK:0:32}
+
+if [ "$EXTENSION" != "git" ]; then
+  echo "Not a Git Repo"
+  exit 1
+fi
+
+if [ "$FIRST_PART" != "https://gitlab.com/sosuke-aizen/" ]; then
+  echo "Not Sosuke Aizen's Gitlab Repo Link"
+  exit 1
+fi
+
+git init --initial-branch=main
+echo "Initializing This Directory for Git"
+echo ""
+
+git config user.name "Sosuke Aizen"
+git config user.email "12640541-sosuke-aizen@users.noreply.gitlab.com"
+echo "Author: '$(git config user.name)' <$(git config user.email)>"
+echo ""
+
+git remote add origin $1
+echo "Added Git Origin: $1"
+echo ""
+
+git add .
+echo "Added All File in Git Repository"
+
+git commit -m "Initial commit"
+echo "Commited All File with message: 'Initial Commit'"
+
+echo "raaafmail@gmail.com" | xclip -selection c
+
+echo "Pushing This Git Repository in Gitlab Repository"
+echo ""
+git push -uf origin main
+
+echo "Repo Link: $REPO_LINK"

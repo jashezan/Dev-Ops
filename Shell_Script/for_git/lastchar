@@ -1,0 +1,6 @@
+#!/bin/bash
+
+country="https://gitlab.com/sosuke-aizen/nextjs-firebase-course.git"
+lastThree=${country: -4}
+
+echo $lastThree
